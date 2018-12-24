@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="etu-TX-qf4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="fsT-1c-xig">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" title="Home" id="JJe-dU-i4s" customClass="ViewController" customModule="LedConvert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SA0-Dn-yeq"/>
+                        <viewControllerLayoutGuide type="bottom" id="wN4-xD-gPb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o3M-1v-LIh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gdA-jl-le5">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gdA-jl-le5" firstAttribute="top" secondItem="SA0-Dn-yeq" secondAttribute="bottom" id="33z-ic-lEe"/>
+                            <constraint firstItem="wN4-xD-gPb" firstAttribute="top" secondItem="gdA-jl-le5" secondAttribute="bottom" id="XpD-48-Eez"/>
+                            <constraint firstAttribute="trailing" secondItem="gdA-jl-le5" secondAttribute="trailing" id="aoA-kG-4PG"/>
+                            <constraint firstItem="gdA-jl-le5" firstAttribute="leading" secondItem="o3M-1v-LIh" secondAttribute="leading" id="ok2-Og-AmR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4cY-cI-QYv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Energy Cost" id="Iye-gS-I0k"/>
+                    <connections>
+                        <outlet property="tableView" destination="gdA-jl-le5" id="XfL-29-1I9"/>
+                        <segue destination="4dY-bh-X5H" kind="show" identifier="calculateSegue" id="B47-9U-bgG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGW-8f-PGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1991" y="-386"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Kk4-Qc-qQz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="etu-TX-qf4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ljP-7N-aos">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JJe-dU-i4s" kind="relationship" relationship="rootViewController" id="4TW-Be-rhu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5zI-Bo-pPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.6" y="-386.35682158920542"/>
+        </scene>
+        <!--Calc-->
+        <scene sceneID="L4z-3R-Xtz">
+            <objects>
+                <viewController storyboardIdentifier="CalcViewController" title="Calc" id="4dY-bh-X5H" customClass="CalcViewController" customModule="LedConvert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GAH-MN-Thk"/>
+                        <viewControllerLayoutGuide type="bottom" id="pnC-sG-C8w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L8M-O2-BBW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hWe-Ld-O7J">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hWe-Ld-O7J" firstAttribute="top" secondItem="GAH-MN-Thk" secondAttribute="bottom" id="1ZE-UZ-nbs"/>
+                            <constraint firstItem="pnC-sG-C8w" firstAttribute="top" secondItem="hWe-Ld-O7J" secondAttribute="bottom" id="aW1-Tt-gbw"/>
+                            <constraint firstAttribute="trailing" secondItem="hWe-Ld-O7J" secondAttribute="trailing" id="ltA-WJ-T4X"/>
+                            <constraint firstItem="hWe-Ld-O7J" firstAttribute="leading" secondItem="L8M-O2-BBW" secondAttribute="leading" id="oxH-h2-2xF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OB6-Y8-2VB"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="5ba-2S-nlu"/>
+                    <connections>
+                        <outlet property="tableView" destination="hWe-Ld-O7J" id="pDd-Rp-HH6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2y9-zO-ALj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2700" y="-387"/>
+        </scene>
+    </scenes>
+</document>
