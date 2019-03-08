@@ -21,6 +21,7 @@ class CalcViewController: FormViewController {
         let kWh = (watt_hours / 1000)
         let kWh_month = (kWh * 30)
         let kWh_year = (kWh * 365)
+        let cost_day = kWh * costo_corrente
         let cost_month = kWh_month * costo_corrente
         let cost_year = kWh_year * costo_corrente
 
@@ -36,6 +37,11 @@ class CalcViewController: FormViewController {
                 $0.value = "€ " + String(format: "%.2f", cost_month)
             }
             
+            <<< LabelRow () {
+                $0.title = "Costo giornaliero"
+                $0.value = "€ " + String(format: "%.2f", cost_day)
+            }
+            
         +++ Section("Consumo")
         
             <<< LabelRow () {
@@ -46,6 +52,11 @@ class CalcViewController: FormViewController {
             <<< LabelRow () {
                 $0.title = "Consumo mensile"
                 $0.value = String(format: "%.2f", kWh_month) + " kWh"
+        }
+        
+            <<< LabelRow () {
+                $0.title = "Consumo giornaliero"
+                $0.value = String(format: "%.2f", kWh) + " kWh"
         }
         
     }

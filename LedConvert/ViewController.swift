@@ -26,7 +26,7 @@ class ViewController: FormViewController {
                 $0.tag = "potenza"
             }
             
-            <<< IntRow() {
+            <<< DecimalRow() {
                 $0.title = "Ore utilizzo giornaliero"
                 $0.tag = "ore_utilizzo"
         }
@@ -55,7 +55,7 @@ class ViewController: FormViewController {
                     
                     let potenza: IntRow? = self?.form.rowBy(tag: "potenza")
 
-                    let ore_utilizzo: IntRow? = self?.form.rowBy(tag: "ore_utilizzo")
+                    let ore_utilizzo: DecimalRow? = self?.form.rowBy(tag: "ore_utilizzo")
 
                     if costo_corrente?.value==nil || potenza?.value==nil || ore_utilizzo?.value==nil {
                         self?.showAlert(title: "Errore", message: "Compila tutti i campi")
