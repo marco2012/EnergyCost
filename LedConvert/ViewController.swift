@@ -24,22 +24,48 @@ class ViewController: FormViewController {
                 $0.title = "Potenza dispositivo"
                 $0.placeholder = "W"
                 $0.tag = "potenza"
-            }
+                
+                let formatter = DecimalFormatter()
+                formatter.locale = .current
+                formatter.positiveSuffix = "W"
+                $0.formatter = formatter
+                }.onCellHighlightChanged { cell, row in
+                    if row.isHighlighted {
+                        let position = cell.textField.position(from: cell.textField.endOfDocument, offset: 0)!
+                        cell.textField.selectedTextRange = cell.textField.textRange(from: position, to: position)
+                    }
+                }
             
             <<< DecimalRow() {
                 $0.title = "Ore utilizzo giornaliero"
                 $0.tag = "ore_utilizzo"
+                let formatter = DecimalFormatter()
+                formatter.locale = .current
+                formatter.positiveSuffix = "h"
+                $0.formatter = formatter
+                }.onCellHighlightChanged { cell, row in
+                    if row.isHighlighted {
+                        let position = cell.textField.position(from: cell.textField.endOfDocument, offset: 0)!
+                        cell.textField.selectedTextRange = cell.textField.textRange(from: position, to: position)
+                    }
         }
         
-        form +++ Section(
-            footer: "Costo elettricità in €/kWh"
-            )
+        form +++ Section()
             
             <<< DecimalRow() {
                 $0.title = "Costo elettricità"
                 $0.placeholder = "€/kWh"
                 $0.tag = "costo_corrente"
                 $0.value = defaults.double(forKey: "costo_corrente")
+                let formatter = DecimalFormatter()
+                formatter.locale = .current
+                formatter.positiveSuffix = "€/kWh"
+                $0.formatter = formatter
+                }.onCellHighlightChanged { cell, row in
+                    if row.isHighlighted {
+                        let position = cell.textField.position(from: cell.textField.endOfDocument, offset: 0)!
+                        cell.textField.selectedTextRange = cell.textField.textRange(from: position, to: position)
+                    }
             }
         
         
